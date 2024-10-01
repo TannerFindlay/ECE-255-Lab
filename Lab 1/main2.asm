@@ -14,7 +14,7 @@ main:		nop
 		mov		r3, #0				//Assigns r3 with the value 0
 loop:
 		cmp		r3, #32				//Compares the value in r3 (0) with 32
-		bge		stop				//If r3>= 8, break/stop the loop
+		bge		stop				//If r3>= 32, break/stop the loop
 		ldr		r4, [r0]			//load content of the memory location stored in r0 (the x_array) into r4
 		ldr		r5, [r1]			//load content of the memory location stored in r1 (the y_array) into r5
 		add		r4, r4,	r5			//Add the contents that are contained in r4 and r5 and store them in r4
