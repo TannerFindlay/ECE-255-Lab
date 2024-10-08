@@ -11,19 +11,19 @@ main:		nop
 		mov		r2, #0
 
 loop1:
-		cmp r2, #20
-		bge stop
-		mov r3, #1
-		mov r7, #0
-		mov r0, r1
-		mov r5, #2
+		cmp 	r2, #20
+		bge 	stop
+		mov 	r3, #1
+		mov 	r7, #0
+		mov 	r0, r1
+		mov 	r5, #2
 
 loop2:
-		cmp r0, #2
-		blt if2
-		sub r0, r2
-		add r7, #1
-		b 	loop2
+		cmp 	r0, #2
+		blt 	loop3
+		sub 	r0, #2
+		add 	r7, #1
+		b 		loop2
 
 loop3:
 		mov r4, r7
@@ -33,14 +33,14 @@ loop3:
 		mov r0, r1
 
 loop4:
-		cmp r0, r5
+		cmp r0, r5 //r0 is remainder, r5 is j
 		blt if1
-		sub r0, #2
+		sub r0, r5
 		add r7, #1
 		b 	loop4
 
 if1:
-		cmp r7, #0
+		cmp r0, #0
 		bne else1
 		mov r3, #0
 		add r5, #1
