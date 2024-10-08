@@ -1,6 +1,6 @@
 		.data
 		.align 4
-primearray:			.space 12			//Initializes pirme array to have 20 4-bit spaces (to hold prime numbers)
+primearray:			.space 80			//Initializes pirme array to have 20 4-bit spaces (to hold prime numbers)
 
 		.text
 		.global main
@@ -11,7 +11,7 @@ main:		nop
 		mov		r2, #0
 
 loop1:
-		cmp r2, #3
+		cmp r2, #20
 		bge stop
 		mov r3, #1
 		mov r7, #0
