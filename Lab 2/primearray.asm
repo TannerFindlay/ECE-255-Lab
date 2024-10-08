@@ -1,18 +1,43 @@
+//
+// Insert your data here
+//
 		.data
 		.align 4
 primearray:			.space 80			//Initializes pirme array to have 20 4-bit spaces (to hold prime numbers)
 
-		.text
-		.global main
 
-main:		nop
+
+
+//
+// Start of ComputePrimes function
+//
+        .text
+        .global		ComputePrimes
+        .func		ComputePrimes
+
+ComputePrimes:
+
+//
+// Save registers
+//
+
+        push		{r0,r1,r2,r3,r4,r5,r6,r7}
+        mov 		r4, lr
+        push		{r4}
+
+//
+// Insert your code to compute the first 20 prime numbers here.
+//
+
+main:
+		nop
 		ldr		r6, =primearray			//Loads r1 and r2 with the addresses of x and y, and then the values contained in those addresses
 		mov		r1, #3
 		mov		r2, #0
 
 loop1:
 		cmp 	r2, #20
-		bge 	stop
+		bge 	done
 		mov 	r3, #1
 		mov 	r7, #0
 		mov 	r0, r1
@@ -63,6 +88,12 @@ else2:
 		add r1, #2
 		b loop1
 
-stop:
-		nop							//This is the end of the program
-		b		stop
+
+//
+// End of ComputePrimes function
+//
+
+done:	pop			{r4}
+        mov			lr, r4
+        pop			{r0,r1,r2,r3,r4,r5,r6,r7}
+        bx			lr
