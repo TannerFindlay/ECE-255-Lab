@@ -2,8 +2,8 @@
 // Insert your data here
 //
 		.data
-		.align 4
-primearray:			.space 80			//Initializes prime array to have 20 4-bit spaces (to hold prime numbers)
+		.align 2
+primearray:			.space 40			//Initializes prime array to have 20 4-bit spaces (to hold prime numbers)
 
 
 
